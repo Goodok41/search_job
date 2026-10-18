@@ -1,8 +1,6 @@
-from pathlib import Path
+from collection import read_inbox
 
-from input_info import parse_vacancy_file
-
-for file in Path("inbox").glob("*.html"):
-    vacancy = parse_vacancy_file(file)
-    print(vacancy.title)
-    print(vacancy.description)
+vacancies = read_inbox("inbox")
+print("Вакансий:", len(vacancies))
+for vacancy in vacancies.values():
+    print(vacancy)
