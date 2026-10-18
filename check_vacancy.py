@@ -1,12 +1,7 @@
-from vacancy import Vacancy
+from pathlib import Path
 
-a = Vacancy("1", "Аналитик", "1–3 года", "SQL, Python")
-b = Vacancy("2", "Аналитик", "нет опыта", "Excel")
+from input_info import parse_vacancy_file
 
-print(repr(a))
-print(repr(b)) 
-
-a.key_skills.append("SQL")
-
-print(a.key_skills)
-print(b.key_skills)  
+for file in Path("inbox").glob("*.html"):
+    vacancy = parse_vacancy_file(file)
+    print(vacancy)
