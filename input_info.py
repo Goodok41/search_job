@@ -12,4 +12,8 @@ def parse_vacancy_file(path):
     title = soup.find(attrs={"data-qa": "vacancy-title"}).get_text(strip=True)
     experience = soup.find(attrs={"data-qa": "vacancy-experience"}).get_text(strip=True)
 
-    return Vacancy(vacancy_id, title, experience, description="", source_file=path.name)
+    key_skills = []
+    for element in soup.find_all(attrs={"data-qa": "skills-element"}):
+        key_skills.append(element.get_text())
+
+    return Vacancy(vacancy_id, title, experience, description="", key_skills=key_skills, source_file=path.name)
