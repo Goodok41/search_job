@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 inbox/
 data/
+check_vacancy/
