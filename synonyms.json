@@ -1,0 +1,18 @@
+{
+  "SQL": ["sql"],
+  "Python": ["python", "питон"],
+  "Pandas": ["pandas"],
+  "Excel": ["excel", "эксель"],
+  "A/B-тесты": ["a/b", "ab тест", "ab-тест", "аб тест", "аб-тест", "сплит-тест"],
+  "Математическая статистика": ["статистик", "матстат"],
+  "Продуктовые метрики": ["продуктовые метрики", "продуктовых метрик", "retention", "ltv", "dau", "mau", "arpu"],
+  "Tableau": ["tableau"],
+  "Power BI": ["power bi", "powerbi"],
+  "Superset": ["superset"],
+  "DataLens": ["datalens", "data lens"],
+  "ClickHouse": ["clickhouse"],
+  "Яндекс.Метрика": ["яндекс.метрик", "яндекс метрик", "appmetrica"],
+  "Google Analytics": ["google analytics"],
+  "Amplitude": ["amplitude"],
+  "Airflow": ["airflow"]
+}
