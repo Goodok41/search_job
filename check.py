@@ -1,12 +1,10 @@
-from collection import read_inbox
-from save_read import load_vacancies, save_vacancies
+from report import count_skills, print_report, save_report
+from save_read import load_vacancies
+from skills import load_synonyms
 
-STATE_FILE = "data/vacancies.json"
+vacancies = load_vacancies("data/vacancies.json")
+synonyms = load_synonyms("synonyms.json")
 
-vacancies = load_vacancies(STATE_FILE)
-print("Было в памяти:", len(vacancies))
-
-vacancies.update(read_inbox("inbox"))
-print("Стало:", len(vacancies))
-
-save_vacancies(vacancies, STATE_FILE)
+counter = count_skills(vacancies, synonyms)
+print_report(counter, len(vacancies))
+save_report(counter, len(vacancies), "data/skills.csv")
