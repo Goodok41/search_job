@@ -15,7 +15,7 @@ def save_vacancies(vacancies, path):
 
     path = Path(path)
     path.parent.mkdir(exist_ok=True)
-    with path.open("w") as file:
+    with path.open("w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 def load_vacancies(path):
