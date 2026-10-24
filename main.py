@@ -4,8 +4,14 @@ from save_read import load_vacancies, save_vacancies
 from skills import load_synonyms
 
 vacancies = load_vacancies("data/vacancies.json")
-vacancies.update(read_inbox("inbox"))
+new_vacancies, skipped = read_inbox("inbox")
+vacancies.update(new_vacancies)
 save_vacancies(vacancies, "data/vacancies.json")
+
+if skipped:
+    print(f"Пропущено файлов: {len(skipped)}")
+    for error in skipped:
+        print(f"  {error}")
 
 synonyms = load_synonyms("synonyms.json")
 counter = count_skills(vacancies, synonyms)
